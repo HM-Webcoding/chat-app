@@ -1,0 +1,61 @@
+.registration {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.registration_form {
+  padding-left: 50px;
+}
+.registration_form h1 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 34.4011px;
+  color: var(--heading-color);
+}
+.sub_heading {
+  font-family: var(--heading-font);
+  font-weight: 400;
+  font-size: 20.6406px;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 15px 0 30px 0;
+}
+.paragraph {
+  width: 370px;
+  text-align: center;
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+}
+.paragraph .signin {
+  color: #ea6c00;
+}
+
+.registration_form .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--heading-color);
+  border-radius: 8px;
+}
+
+.erros {
+  color: #ff3333;
+  font-family: var(--primary-font);
+}
+.passwordField {
+  position: relative;
+}
+.passShow {
+  position: absolute;
+  top: 45%;
+  right: 25%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.comfrmPassShow {
+  position: absolute;
+  top: 45%;
+  right: 25%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}

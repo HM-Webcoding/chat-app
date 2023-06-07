@@ -1,0 +1,44 @@
+.profileIconsWrapper{
+    width: 100%;
+}
+.profileIcons svg{
+    color: var(--white-color);
+    width: 36px;
+    height: 36px;
+    opacity: .7;
+}
+.profileIcons{
+    margin: 20px 0;
+    position: relative;
+    z-index: 1;
+    padding: 10px 0;
+}
+
+.profileIcons .active::after{
+    z-index: -1;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60px;
+    width: 85%;
+    background: var(--white-color);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.profileIcons .active::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60px;
+    width: 8px;
+    background: var(--primary-color);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.profileIcons .active svg{
+    color: var(--primary-color);
+}

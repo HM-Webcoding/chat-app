@@ -1,0 +1,129 @@
+.friendRequest{
+    height: 462px;
+    width: 95%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 20px;
+    background: var(--white-color);
+    margin-top: 15px;
+    padding: 13px 27px 20px 20px;
+    box-sizing: border-box;
+    margin-left: 30px;
+}
+.friendRequestBody {
+    height: 400px;
+    overflow-y: auto;
+    margin-top: 10px;
+    padding-right: 20px;
+}
+.friendRequestBody::-webkit-scrollbar{
+    width: 5px;
+    border-radius: 20px;
+}
+.friendRequestBody::-webkit-scrollbar-thumb{
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg, #D65DB1 0%, #FF6F91 35%, #FF9671 100%, #FFC75F 100%, #F9F871 35%);
+    border-radius: 20px;
+}
+.friendRequestBody::-webkit-scrollbar-track{
+    background-color: var(--primary-color);
+    border-radius: 20px;
+}
+.friendRequest input{
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: none;
+    padding: 18px 40px 18px 60px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--input-field);
+    font-family: var(--primary-font);
+}
+.searchBox {
+    position: relative;
+}
+.searchIcon svg{
+    position: absolute;
+    left: 23px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 19px;
+}
+.searchOptionIcon{
+    position: absolute;
+    right: 20px;
+    top: 55%;
+    transform: translateY(-50%);
+    font-size: 19px;
+    color: var(--primary-color);
+}
+.friendRequestHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.friendRequestHeader h2{
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--primary-font);
+    color: var(--black-color);
+    margin-bottom: 5px;
+}
+.friendRequestHeader svg{
+    margin-right: 15px;
+    color: var(--primary-color);
+}
+.friendRequestImg img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.friendRequestWrapper{
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 0;
+    align-items: center;
+    border-bottom: 1px solid var(--input-field)
+}
+.friendRequestTitle {
+    width: 170px;
+}
+.friendRequestTitle h2{
+    font-family: var(--primary-font);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--black-color);
+}
+.friendRequestTitle p{
+    font-family: var(--primary-font);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--subtitle-color);
+}
+.friendRequestButton {
+    width: 188px;
+}
+.friendRequestButton button {
+    background: var(--primary-color);
+    color: var(--white-color);
+    font-weight: 600;
+    font-size: 15px;
+    margin-right: 5px;
+    text-transform: capitalize;
+    border-radius: 8px;
+}
+.friendRequestButton button:hover{
+    background: var(--primary-color);
+}
+.friendRequestButton .removeButton{
+    background: #e4e6eb;
+    color: rgb(244, 67, 54);
+}
+.friendRequestButton .removeButton:hover{
+    background: #e4e6eb;
+    color: #050505;
+}

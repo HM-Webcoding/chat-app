@@ -1,0 +1,44 @@
+.sidebar {
+    width: 8%;
+    height: 98%;
+    position: fixed;
+    top: 15px;
+    left: 10px;
+}
+.sidebarWrapper{
+    background-color: var(--primary-color);
+    height: 98%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.profile_picture img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px ;
+}
+.profile_picture p{
+    color: var(--white-color);
+    font-family: var(--primary-font);
+    font-weight: 600;
+}
+.sidebar_icons{
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.logout{
+    height: 10%;
+}
+.logout svg{
+    color: var(--white-color);
+    width: 36px;
+    height: 36px;
+}

@@ -1,0 +1,36 @@
+:root {
+  --primary-color: #5f35f5;
+  --heading-color: #11175d;
+  --subtitle-color: rgba(0, 0, 0, 0.5);
+  --white-color: #ffff;
+  --black-color: #000000;
+  --input-field: rgba(61, 61, 61, 0.50);
+  --text-color: rgba(0, 0, 0, 0.5);
+  --primary-font: "Poppins", sans-serif;
+  --heading-font: "Nunito", sans-serif;
+  --text-font: "Open Sans", sans-serif;
+}
+body{
+  position: relative;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+p {
+  padding: 0;
+  margin: 0;
+}

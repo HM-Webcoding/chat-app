@@ -1,0 +1,54 @@
+.login_heading {
+  font-family: var(--text-font);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--heading-color);
+}
+.login_heading h1 {
+  margin-bottom: 20px;
+}
+.login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+.paragraph {
+  width: 370px;
+  font-size: 14px;
+  color: var(--heading-color);
+  font-family: var(--heading-font);
+  text-align: left;
+}
+.forgotPassPara a {
+  margin-top: 10px;
+  color: #ff3333 !important;
+  font-family: var(--primary-font);
+  padding-top: 10px;
+  display: inline-block;
+}
+.errors {
+  color: #ff3333;
+  font-family: var(--primary-font);
+}
+.signinOption {
+  display: flex;
+  align-items: center;
+}
+.signinOption {
+  margin: 20px 0;
+}
+.google,
+.github,
+.facebook {
+  padding: 5px 15px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(224, 219, 219, 0.87);
+  border-radius: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
