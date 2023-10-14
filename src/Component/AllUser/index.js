@@ -5,14 +5,12 @@ import { SlOptionsVertical } from "react-icons/sl";
 import Button from "@mui/material/Button";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { useSelector } from "react-redux";
-import { getStorage, getDownloadURL } from "firebase/storage";
 
 const AllUser = () => {
   const user = useSelector((users) => users.logIn.logined);
   const db = getDatabase();
   const [userlist, setUserList] = useState([]);
   const [filterUser, setFilterUser] = useState([]);
-  const storage = getStorage();
 
   useEffect(() => {
     const starCountRef = ref(db, "users");
