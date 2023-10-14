@@ -4,13 +4,14 @@
   --subtitle-color: rgba(0, 0, 0, 0.5);
   --white-color: #ffff;
   --black-color: #000000;
-  --input-field: rgba(61, 61, 61, 0.50);
+  --input-field: rgba(61, 61, 61, 0.5);
   --text-color: rgba(0, 0, 0, 0.5);
+  --cancel-btn-color: rgb(210, 115, 115);
   --primary-font: "Poppins", sans-serif;
   --heading-font: "Nunito", sans-serif;
   --text-font: "Open Sans", sans-serif;
 }
-body{
+body {
   position: relative;
 }
 

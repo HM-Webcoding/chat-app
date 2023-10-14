@@ -34,58 +34,6 @@ const FrienRequest = () => {
                 <Button variant="contained" className='removeButton'>Remove</Button>
                 </div>
             </div>
-            <div className="friendRequestWrapper">
-              <div className='friendRequestImg'>
-                <picture><img src='/assets/friend-profile-pic-2.jpg'></img></picture>
-              </div>
-              <div className='friendRequestTitle'>
-                <h2>Friends Reunion</h2>
-                <p>Hi Guys, Wassup!</p>
-              </div>
-              <div className='friendRequestButton'>
-                <Button variant="contained">Accept</Button>
-                <Button variant="contained" className='removeButton'>Remove</Button>
-                </div>
-            </div>
-            <div className="friendRequestWrapper">
-              <div className='friendRequestImg'>
-                <picture><img src='/assets/dummy-profile.png'></img></picture>
-              </div>
-              <div className='friendRequestTitle'>
-                <h2>Friends Reunion</h2>
-                <p>Hi Guys, Wassup!</p>
-              </div>
-              <div className='friendRequestButton'>
-                <Button variant="contained">Accept</Button>
-                <Button variant="contained" className='removeButton'>Remove</Button>
-                </div>
-            </div>
-            <div className="friendRequestWrapper">
-              <div className='friendRequestImg'>
-              <picture><img src='/assets/friend-profile-pic-2.jpg'></img></picture>
-              </div>
-              <div className='friendRequestTitle'>
-                <h2>Friends Reunion</h2>
-                <p>Hi Guys, Wassup!</p>
-              </div>
-              <div className='friendRequestButton'>
-                <Button variant="contained">Accept</Button>
-                <Button variant="contained" className='removeButton'>Remove</Button>
-                </div>
-            </div>
-            <div className="friendRequestWrapper">
-              <div className='friendRequestImg'>
-                <picture><img src='/assets/dummy-profile.png'></img></picture>
-              </div>
-              <div className='friendRequestTitle'>
-                <h2>Friends Reunion</h2>
-                <p>Hi Guys, Wassup!</p>
-              </div>
-              <div className='friendRequestButton'>
-                <Button variant="contained">Accept</Button>
-                <Button variant="contained" className='removeButton'>Remove</Button>
-                </div>
-            </div>
           </div>
       </div>
   )

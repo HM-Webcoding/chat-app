@@ -1,25 +1,56 @@
-import React from 'react'
-import "./style.css"
-import ProfileIcons from '../ProfileIcons'
-import { TbLogout } from 'react-icons/tb';
+import React, { useState } from "react";
+import "./style.css";
+import ProfileIcons from "../ProfileIcons";
+import { TbLogout } from "react-icons/tb";
+import { AiOutlineCloudUpload } from "react-icons/ai";
+import BasicModal from "../Modal";
+import { getAuth, signOut } from "firebase/auth";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { loginusers } from "../../Feature/Slice/LoginSlice";
 
 const Sidebar = () => {
-  return (
-    <div className='sidebar'>
-     <div className='sidebarWrapper'>
-        <div className='profile_picture'>
-            <picture><img src='/assets/profile.png'></img></picture>
-            <p>Hamidur Rashid</p>
-        </div>
-        <div className='sidebar_icons'>
-            <ProfileIcons/>
-        </div>
-        <div className='logout'>
-           <TbLogout />
-        </div>
-     </div>
-    </div>
-  )
-}
+  const user = useSelector((users) => users.logIn.logined);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const auth = getAuth();
 
-export default Sidebar
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        localStorage.removeItem("users");
+        dispatch(loginusers(null));
+        navigate("/login");
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
+  console.log(user);
+  return (
+    <div className="sidebar">
+      <div className="sidebarWrapper">
+        <div className="profile_picture" onClick={handleOpen}>
+          <picture>
+            <img alt="" src={user.photoURL}></img>
+          </picture>
+          <div className="profile-overlay">
+            <AiOutlineCloudUpload />
+          </div>
+        </div>
+        {<p>{user.displayName}</p>}
+        <div className="sidebar_icons">
+          <ProfileIcons />
+        </div>
+        <div className="logout" onClick={handleLogout}>
+          <TbLogout />
+        </div>
+        <BasicModal open={open} setOpen={setOpen} />
+      </div>
+    </div>
+  );
+};
+
+export default Sidebar;

@@ -33,40 +33,6 @@ const GroupList = () => {
               <div className='groupListButton'>
                 <Button variant="contained">Join</Button></div>
             </div>
-            <div className="groupListWrapper">
-              <div className='groupListImg'>
-                <picture><img src='/assets/dummy-profile.png'></img></picture>
-              </div>
-              <div className='groupListTitle'>
-                <h2>Friends Reunion</h2>
-                <p>Hi Guys, Wassup!</p>
-              </div>
-              <div className='groupListButton'>
-                <Button variant="contained">Join</Button></div>
-            </div>
-            <div className="groupListWrapper">
-              <div className='groupListImg'>
-                <picture><img src='/assets/dummy-profile.png'></img></picture>
-              </div>
-              <div className='groupListTitle'>
-                <h2>Friends Reunion</h2>
-                <p>Hi Guys, Wassup!</p>
-              </div>
-              <div className='groupListButton'>
-                <Button variant="contained">Join</Button></div>
-            </div>
-            
-            <div className="groupListWrapper">
-              <div className='groupListImg'>
-                <picture><img src='/assets/dummy-profile.png'></img></picture>
-              </div>
-              <div className='groupListTitle'>
-                <h2>Friends Reunion</h2>
-                <p>Hi Guys, Wassup!</p>
-              </div>
-              <div className='groupListButton'>
-                <Button variant="contained">Join</Button></div>
-            </div>
           </div>
       </div>
     </>

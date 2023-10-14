@@ -15,16 +15,15 @@ import "react-toastify/dist/ReactToastify.css";
 import Google from "../../svg/google";
 import Github from "../../svg/github";
 import Facebook from "../../svg/facebook";
-import {useDispatch} from "react-redux"
-import loginUsers from "../../Feature/Slice/Slice"
+import { useDispatch } from "react-redux";
+import { loginusers } from "../../Feature/Slice/LoginSlice";
 
 const LoginForm = () => {
   const provider = new GoogleAuthProvider();
   const gitProvider = new GithubAuthProvider();
   const auth = getAuth();
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   let signinInputValue = {
     email: "",
     password: "",
@@ -46,8 +45,9 @@ const LoginForm = () => {
     )
       .then(({ user }) => {
         if (user.emailVerified === true) {
-          localStorage.setItem("users", JSON.stringify(user))
-          // dispatch(loginUsers(user));
+          console.log(user);
+          dispatch(loginusers(user));
+          localStorage.setItem("users", JSON.stringify(user));
           navigate("/");
         } else {
           toast.error("please varify your mail", {
@@ -63,7 +63,7 @@ const LoginForm = () => {
         }
       })
       .catch((error) => {
-        console.log(error.message);
+        console.log(error);
         if (error.message.includes("auth/wrong-password")) {
           toast.error("Wrong Password", {
             position: "top-center",
@@ -153,7 +153,7 @@ const LoginForm = () => {
             <p className="errors">{signinFormik.errors.password}</p>
           ) : null}
           <div className="forgotPassPara">
-          <Link to="/forgotPass">Are you forgot password?</Link>
+            <Link to="/forgotPass">Are you forgot password?</Link>
           </div>
           <Button
             type="submit"

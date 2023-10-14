@@ -22,7 +22,7 @@ const Friends = () => {
           <div className='FriendsBody'>
             <div className="friendRequestWrapper">
                 <div className='friendRequestImg'>
-                <picture><img src='/assets/friend-profile-pic.jpg'></img></picture>
+                  <picture><img src='/assets/friend-profile-pic.jpg'></img></picture>
                 </div>
                 <div className='friendRequestTitle'>
                     <h2>Friends Reunion</h2>
@@ -31,49 +31,9 @@ const Friends = () => {
                 <div className='friendRequestButton'>
                     <Button variant="contained">Unfriend</Button>
                     <Button variant="contained" className='removeButton'>Block</Button>
-                    </div>
                 </div>
-                <div className="friendRequestWrapper">
-                <div className='friendRequestImg'>
-                <picture><img src='/assets/friend-profile-pic.jpg'></img></picture>
-                </div>
-                <div className='friendRequestTitle'>
-                    <h2>Friends Reunion</h2>
-                    <p>Hello</p>
-                </div>
-                <div className='friendRequestButton'>
-                    <Button variant="contained">Unfriend</Button>
-                    <Button variant="contained" className='removeButton'>Block</Button>
-                    </div>
-                </div>
-                <div className="friendRequestWrapper">
-                <div className='friendRequestImg'>
-                <picture><img src='/assets/friend-profile-pic.jpg'></img></picture>
-                </div>
-                <div className='friendRequestTitle'>
-                    <h2>Friends Reunion</h2>
-                    <p>Dinner?</p>
-                </div>
-                <div className='friendRequestButton'>
-                    <Button variant="contained">Unfriend</Button>
-                    <Button variant="contained" className='removeButton'>Block</Button>
-                    </div>
-                </div>
-                <div className="friendRequestWrapper">
-                <div className='friendRequestImg'>
-                <picture><img src='/assets/friend-profile-pic.jpg'></img></picture>
-                </div>
-                <div className='friendRequestTitle'>
-                    <h2>Friends Reunion</h2>
-                    <p>ok</p>
-                </div>
-                <div className='friendRequestButton'>
-                    <Button variant="contained">Unfriend</Button>
-                    <Button variant="contained" className='removeButton'>Block</Button>
-                    </div>
-                </div>
-          </div>
-          
+            </div>
+          </div> 
     </div>
   )
 }

@@ -32,30 +32,6 @@ const BlockUser = () => {
                     <Button variant="contained">Unblock</Button>
                 </div>
             </div>
-            <div className="blockUserWrapper">
-                <div className='blockUserImg'>
-                <picture><img src='/assets/friend-profile-pic.jpg'></img></picture>
-                </div>
-                <div className='blockUserTitle'>
-                    <h2>Friends Reunion</h2>
-                    <p>Today, 8:56pm</p>
-                </div>
-                <div className='blockUserButton'>
-                    <Button variant="contained">Unblock</Button>
-                </div>
-            </div>
-            <div className="blockUserWrapper">
-                <div className='blockUserImg'>
-                <picture><img src='/assets/friend-profile-pic.jpg'></img></picture>
-                </div>
-                <div className='blockUserTitle'>
-                    <h2>Friends Reunion</h2>
-                    <p>Today, 8:56pm</p>
-                </div>
-                <div className='blockUserButton'>
-                    <Button variant="contained">Unblock</Button>
-                </div>
-            </div>
           </div>
           
     </div>

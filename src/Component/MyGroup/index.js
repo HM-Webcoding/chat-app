@@ -32,42 +32,6 @@ const MyGroup = () => {
                 <p>Yesterday, 6:22pm</p>
                 </div>
             </div>
-            <div className="myGroupWrapper">
-              <div className='myGroupImg'>
-              <picture><img src='/assets/friend-profile-pic-2.jpg'></img></picture>
-              </div>
-              <div className='myGroupTitle'>
-                <h2>Friends Reunion</h2>
-                <p>Dinner?</p>
-              </div>
-              <div className='myGroupButton'>
-                <p>Yesterday, 6:22pm</p>
-                </div>
-            </div>
-            <div className="myGroupWrapper">
-              <div className='myGroupImg'>
-              <picture><img src='/assets/friend-profile-pic.jpg'></img></picture>
-              </div>
-              <div className='myGroupTitle'>
-                <h2>Friends Reunion</h2>
-                <p>Dinner?</p>
-              </div>
-              <div className='myGroupButton'>
-                <p>Yesterday, 6:22pm</p>
-                </div>
-            </div>
-            <div className="myGroupWrapper">
-              <div className='myGroupImg'>
-              <picture><img src='/assets/friend-profile-pic-2.jpg'></img></picture>
-              </div>
-              <div className='myGroupTitle'>
-                <h2>Friends Reunion</h2>
-                <p>Dinner?</p>
-              </div>
-              <div className='myGroupButton'>
-                <p>Yesterday, 6:22pm</p>
-                </div>
-            </div>
           </div>
       </div>
   )
