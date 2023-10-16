@@ -35,3 +35,12 @@ p {
   padding: 0;
   margin: 0;
 }
+
+.removeButton {
+  background: #e4e6eb !important;
+  color: rgb(244, 67, 54) !important;
+}
+.removeButton:hover {
+  background: #e4e6eb !important;
+  color: #050505 !important;
+}

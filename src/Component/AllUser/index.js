@@ -3,7 +3,14 @@ import "./style.css";
 import { BiSearch } from "react-icons/bi";
 import { SlOptionsVertical } from "react-icons/sl";
 import Button from "@mui/material/Button";
-import { getDatabase, ref, onValue } from "firebase/database";
+import {
+  getDatabase,
+  ref,
+  onValue,
+  set,
+  push,
+  remove,
+} from "firebase/database";
 import { useSelector } from "react-redux";
 
 const AllUser = () => {
@@ -11,7 +18,10 @@ const AllUser = () => {
   const db = getDatabase();
   const [userlist, setUserList] = useState([]);
   const [filterUser, setFilterUser] = useState([]);
+  const [frndReq, setFrndReq] = useState([]);
+  const [friends, setFriends] = useState([]);
 
+  // show all user list
   useEffect(() => {
     const starCountRef = ref(db, "users");
     onValue(starCountRef, (snapshot) => {
@@ -25,6 +35,7 @@ const AllUser = () => {
     });
   }, []);
 
+  // searching
   let handleUserSearch = (e) => {
     let searchWord = [];
     if (e.target.value.length == 0) {
@@ -40,8 +51,45 @@ const AllUser = () => {
       });
     }
   };
+  // show friends
+  useEffect(() => {
+    const starCountRef = ref(db, "friends/");
+    onValue(starCountRef, (snapshot) => {
+      let friendArry = [];
+      snapshot.forEach((item) => {
+        friendArry.push(item.val().senderid + item.val().receiverid);
+      });
+      setFriends(friendArry);
+    });
+  }, []);
+  // show friend request
+  useEffect(() => {
+    const starCountRef = ref(db, "frndRequst/");
+    onValue(starCountRef, (snapshot) => {
+      let frndReqArry = [];
+      snapshot.forEach((item) => {
+        frndReqArry.push(item.val().senderid + item.val().receiverid);
+      });
+      setFrndReq(frndReqArry);
+    });
+  }, []);
 
-  console.log(userlist);
+  // friend request send
+
+  let handleFrndReq = (item) => {
+    set(ref(db, "frndRequst/" + user.uid + item.id), {
+      sendername: user.displayName,
+      senderid: user.uid,
+      receivername: item.username,
+      receiverid: item.id,
+    });
+  };
+
+  // cancel friend request
+  let handleCancelReq = (userid) => {
+    remove(ref(db, "frndRequst/" + user.uid + userid.id));
+  };
+
   return (
     <div className="allUser">
       <div className="allUserHeader">
@@ -86,7 +134,23 @@ const AllUser = () => {
                   <p>Today, 8:56pm</p>
                 </div>
                 <div className="allUserButton">
-                  <Button variant="contained">Add friend</Button>
+                  {frndReq.includes(item.id + user.uid) ||
+                  frndReq.includes(user.uid + item.id) ? (
+                    <Button
+                      variant="contained"
+                      className="removeButton"
+                      onClick={() => handleCancelReq(item)}
+                    >
+                      Cancel
+                    </Button>
+                  ) : (
+                    <Button
+                      onClick={() => handleFrndReq(item)}
+                      variant="contained"
+                    >
+                      Add friend
+                    </Button>
+                  )}
                 </div>
               </div>
             ))}

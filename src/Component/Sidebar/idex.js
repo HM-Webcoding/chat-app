@@ -28,7 +28,7 @@ const Sidebar = () => {
         // An error happened.
       });
   };
-  console.log(user);
+
   return (
     <div className="sidebar">
       <div className="sidebarWrapper">
