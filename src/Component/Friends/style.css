@@ -1,110 +1,116 @@
-.Friends{
-    height: 430px;
-    width: 95%;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 20px;
-    background: var(--white-color);
-    margin-top: 5px;
-    padding: 13px 27px 20px 20px;
-    box-sizing: border-box;
-    margin-left: 10px;
+.Friends {
+  height: 430px;
+  width: 95%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 20px;
+  background: var(--white-color);
+  margin-top: 5px;
+  padding: 13px 27px 20px 20px;
+  box-sizing: border-box;
+  margin-left: 10px;
 }
 .FriendsBody {
-    height: 300px;
-    overflow-y: auto;
-    margin-top: 10px;
-    padding-right: 20px;
+  height: 300px;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-right: 20px;
 }
-.FriendsBody::-webkit-scrollbar{
-    width: 5px;
-    border-radius: 20px;
+.FriendsBody::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 20px;
 }
-.FriendsBody::-webkit-scrollbar-thumb{
-    background: rgb(2,0,36);
-    background: linear-gradient(45deg, #D65DB1 0%, #FF6F91 35%, #FF9671 100%, #FFC75F 100%, #F9F871 35%);
-    border-radius: 20px;
-
+.FriendsBody::-webkit-scrollbar-thumb {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    45deg,
+    #d65db1 0%,
+    #ff6f91 35%,
+    #ff9671 100%,
+    #ffc75f 100%,
+    #f9f871 35%
+  );
+  border-radius: 20px;
 }
-.FriendsBody::-webkit-scrollbar-track{
-    background-color: var(--primary-color);
-    border-radius: 20px;
+.FriendsBody::-webkit-scrollbar-track {
+  background-color: var(--primary-color);
+  border-radius: 20px;
 }
-.Friends input{
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    border: none;
-    padding: 18px 40px 18px 60px;
-    width: 100%;
-    box-sizing: border-box;
-    outline: none;
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--input-field);
-    font-family: var(--primary-font);
+.Friends input {
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  padding: 18px 40px 18px 60px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--input-field);
+  font-family: var(--primary-font);
 }
 .searchBox {
-    position: relative;
+  position: relative;
 }
-.searchIcon svg{
-    position: absolute;
-    left: 23px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 19px;
+.searchIcon svg {
+  position: absolute;
+  left: 23px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 19px;
 }
-.searchOptionIcon{
-    position: absolute;
-    right: 20px;
-    top: 55%;
-    transform: translateY(-50%);
-    font-size: 19px;
-    color: var(--primary-color);
+.searchOptionIcon {
+  position: absolute;
+  right: 20px;
+  top: 55%;
+  transform: translateY(-50%);
+  font-size: 19px;
+  color: var(--primary-color);
 }
-.FriendsHeader h2{
-    font-size: 20px;
-    font-weight: 600;
-    font-family: var(--primary-font);
-    color: var(--black-color);
-    margin-bottom: 5px;
+.FriendsHeader h2 {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: var(--primary-font);
+  color: var(--black-color);
+  margin-bottom: 5px;
 }
-.FriendsImg img{
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    overflow: hidden;
+.FriendsImg img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
 }
-.FriendsWrapper{
-    display: flex;
-    justify-content: space-between;
-    padding: 13px 0;
-    align-items: center;
-    border-bottom: 1px solid var(--input-field)
+.FriendsWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 0;
+  align-items: center;
+  border-bottom: 1px solid var(--input-field);
+  position: relative;
 }
-.FriendsTitle{
-    width: 270px;
+.FriendsTitle {
+  width: 300px;
 }
-.FriendsTitle h2{
-    font-family: var(--primary-font);
-    font-weight: 600;
-    font-size: 18px;
-    color: var(--black-color);
+.FriendsTitle h2 {
+  font-family: var(--primary-font);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--black-color);
 }
-.FriendsTitle p{
-    font-family: var(--primary-font);
-    font-weight: 500;
-    font-size: 16px;
-    color: var(--subtitle-color);
+.FriendsTitle p {
+  font-family: var(--primary-font);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--subtitle-color);
 }
-.FriendsButton button {
-    background: var(--primary-color);
-    color: var(--white-color);
-    font-weight: 600;
-    font-size: 15px;
-    margin-right: 17px;
-    text-transform: capitalize;
-    border-radius: 8px;
+.modalbox button {
+  width: 100%;
 }
-.FriendsButton button:hover{
-    background: var(--primary-color);
+.modalbox .removeButton {
+  margin-top: 10px;
+}
+
+.friendsOption svg {
+  font-size: 25px;
+  fill: var(--white-color);
 }

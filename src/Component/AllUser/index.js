@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
-import { BiSearch } from "react-icons/bi";
+import { BiSearch, BiMessageRounded } from "react-icons/bi";
 import { SlOptionsVertical } from "react-icons/sl";
 import Button from "@mui/material/Button";
 import {
@@ -12,6 +12,7 @@ import {
   remove,
 } from "firebase/database";
 import { useSelector } from "react-redux";
+import CustomButton from "../CustomButton";
 
 const AllUser = () => {
   const user = useSelector((users) => users.logIn.logined);
@@ -34,7 +35,6 @@ const AllUser = () => {
       setUserList(userArray);
     });
   }, []);
-
   // searching
   let handleUserSearch = (e) => {
     let searchWord = [];
@@ -133,25 +133,32 @@ const AllUser = () => {
                   <h2>{item.username}</h2>
                   <p>Today, 8:56pm</p>
                 </div>
-                <div className="allUserButton">
-                  {frndReq.includes(item.id + user.uid) ||
-                  frndReq.includes(user.uid + item.id) ? (
-                    <Button
-                      variant="contained"
-                      className="removeButton"
-                      onClick={() => handleCancelReq(item)}
-                    >
-                      Cancel
-                    </Button>
-                  ) : (
-                    <Button
-                      onClick={() => handleFrndReq(item)}
-                      variant="contained"
-                    >
-                      Add friend
-                    </Button>
-                  )}
-                </div>
+                {friends.includes(item.id + user.uid) ||
+                friends.includes(user.uid + item.id) ? (
+                  <CustomButton className="message" variant="contained">
+                    <BiMessageRounded /> Message
+                  </CustomButton>
+                ) : (
+                  <div className="allUserButton">
+                    {frndReq.includes(item.id + user.uid) ||
+                    frndReq.includes(user.uid + item.id) ? (
+                      <Button
+                        variant="contained"
+                        className="removeButton"
+                        onClick={() => handleCancelReq(item)}
+                      >
+                        Cancel
+                      </Button>
+                    ) : (
+                      <Button
+                        onClick={() => handleFrndReq(item)}
+                        variant="contained"
+                      >
+                        Add friend
+                      </Button>
+                    )}
+                  </div>
+                )}
               </div>
             ))}
       </div>

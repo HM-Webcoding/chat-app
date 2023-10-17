@@ -1,5 +1,6 @@
 :root {
   --primary-color: #5f35f5;
+  --secodary-color: #0861f2;
   --heading-color: #11175d;
   --subtitle-color: rgba(0, 0, 0, 0.5);
   --white-color: #ffff;
@@ -43,4 +44,10 @@ p {
 .removeButton:hover {
   background: #e4e6eb !important;
   color: #050505 !important;
+}
+
+/* modal blur */
+
+.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+  backdrop-filter: blur(4px);
 }
