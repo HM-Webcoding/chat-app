@@ -3,7 +3,6 @@ import "./style.css";
 import { BiSearch } from "react-icons/bi";
 import { SlOptionsVertical } from "react-icons/sl";
 import { BiChevronsDown } from "react-icons/bi";
-import Button from "@mui/material/Button";
 import { getDatabase, ref, onValue, remove } from "firebase/database";
 import { useSelector } from "react-redux";
 import Box from "@mui/material/Box";
@@ -35,7 +34,10 @@ const Friends = () => {
     onValue(starCountRef, (snapshot) => {
       let friendArr = [];
       snapshot.forEach((item) => {
-        if (user.uid == item.val().receiverid || user.uid == item.senderid) {
+        if (
+          user.uid == item.val().receiverid ||
+          user.uid == item.val().senderid
+        ) {
           friendArr.push({ ...item.val(), id: item.key });
         }
       });
@@ -47,7 +49,7 @@ const Friends = () => {
     remove(ref(db, "friends/" + item.id));
     setOpen(false);
   };
-
+  console.log(friends);
   return (
     <div className="Friends">
       <div className="FriendsHeader">
@@ -64,7 +66,7 @@ const Friends = () => {
       </div>
       <div className="FriendsBody">
         {friends.map((item, i) => (
-          <div className="FriendsWrapper">
+          <div className="FriendsWrapper" key={i}>
             <div className="FriendsImg">
               <picture>
                 <img src="/assets/friend-profile-pic.jpg"></img>
@@ -72,9 +74,9 @@ const Friends = () => {
             </div>
             <div className="FriendsTitle">
               <h2>
-                {user.uid === item.receiverid
-                  ? item.sendername
-                  : item.receivername}
+                {user.uid === item.senderid
+                  ? item.receivername
+                  : item.sendername}
               </h2>
               <p>Sure</p>
             </div>
