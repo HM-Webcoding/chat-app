@@ -3,7 +3,7 @@ import "./style.css";
 import { BiSearch } from "react-icons/bi";
 import { SlOptionsVertical } from "react-icons/sl";
 import { BiChevronsDown } from "react-icons/bi";
-import { getDatabase, ref, onValue, remove } from "firebase/database";
+import { getDatabase, ref, onValue, remove, set, push } from "firebase/database";
 import { useSelector } from "react-redux";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
@@ -45,11 +45,33 @@ const Friends = () => {
     });
   }, []);
 
+  const handleBlock = (item) => {
+    if (item.senderid == user.uid){
+      set(push(ref(db, 'block')), {
+        block: item.receivername,
+        blockId: item.receiverid,
+        blockBy : item.sendername,
+        blockById : item.senderid
+      }).then(()=>{
+        remove(ref(db, "friends/" + item.id))
+      })
+    }else{
+      set(push(ref(db, 'block')), {
+        block: item.sendername,
+        blockId: item.senderid,
+        blockBy : item.receivername,
+        blockById : item.receiverid
+      }).then(()=>{
+        remove(ref(db, "friends/" + item.id))
+      })
+    }
+  }
+
   const handleUnfrien = (item) => {
     remove(ref(db, "friends/" + item.id));
     setOpen(false);
   };
-  console.log(friends);
+
   return (
     <div className="Friends">
       <div className="FriendsHeader">
@@ -100,7 +122,10 @@ const Friends = () => {
                   >
                     Unfriend
                   </CustomButton>
-                  <CustomButton variant="contained" className="removeButton">
+                  <CustomButton 
+                  variant="contained" 
+                  className="removeButton"
+                  onClick={() => handleBlock(item)}>
                     Block
                   </CustomButton>
                 </Box>

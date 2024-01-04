@@ -21,6 +21,7 @@ const AllUser = () => {
   const [filterUser, setFilterUser] = useState([]);
   const [frndReq, setFrndReq] = useState([]);
   const [friends, setFriends] = useState([]);
+  const [blocked, setBlocked] = useState([])
 
   // show all user list
   useEffect(() => {
@@ -90,6 +91,26 @@ const AllUser = () => {
     remove(ref(db, "frndRequst/" + user.uid + userid.id));
   };
 
+  // block user hide add frined button
+  useEffect(()=>{
+    const starCountRef = ref(db, 'block');
+    onValue(starCountRef, (snapshot) => {
+      let blockArr = []
+      snapshot.forEach((blockItem)=>{
+        if(blockItem.val().blockId == user.uid){
+          blockArr.push({
+            block: blockItem.val().block,
+            blockById: blockItem.val().blockById
+          })
+        }
+      })
+      setBlocked(blockArr)
+    });
+  }, [])
+ 
+userlist.map((item)=>{
+  item.id.includes("HpVnGev2WPcKKeqlCIksunIRy622")
+})
   return (
     <div className="allUser">
       <div className="allUserHeader">
@@ -105,9 +126,10 @@ const AllUser = () => {
         </div>
       </div>
       <div className="allUserBody">
-        {filterUser.length > 0
-          ? filterUser.map((item, i) => (
-              <div className="allUserWrapper" key={i}>
+        {
+        filterUser.length > 0
+          ? filterUser.map((item, i) => 
+          ( <div className="allUserWrapper" key={i}>
                 <div className="allUserImg">
                   <picture>
                     <img src={item.photoURL}></img>
@@ -133,12 +155,17 @@ const AllUser = () => {
                   <h2>{item.username}</h2>
                   <p>Today, 8:56pm</p>
                 </div>
+
                 {friends.includes(item.id + user.uid) ||
-                friends.includes(user.uid + item.id) ? (
+                friends.includes(user.uid + item.id) ? 
+                
+                (
                   <CustomButton className="message" variant="contained">
                     <BiMessageRounded /> Message
                   </CustomButton>
-                ) : (
+                ) 
+                : 
+                (
                   <div className="allUserButton">
                     {frndReq.includes(item.id + user.uid) ||
                     frndReq.includes(user.uid + item.id) ? (
@@ -149,7 +176,9 @@ const AllUser = () => {
                       >
                         Cancel
                       </Button>
-                    ) : (
+                    ) 
+                    :
+                     (
                       <Button
                         onClick={() => handleFrndReq(item)}
                         variant="contained"
@@ -161,7 +190,7 @@ const AllUser = () => {
                 )}
               </div>
             ))}
-      </div>
+      </div> 
     </div>
   );
 };
