@@ -51,6 +51,7 @@
 }
 .searchBox {
   position: relative;
+  width: 70%;
 }
 .searchIcon svg {
   position: absolute;
@@ -73,6 +74,11 @@
   font-family: var(--primary-font);
   color: var(--black-color);
   margin-bottom: 5px;
+}
+.groupListHeaderWrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .groupListImg img {
   width: 70px;
@@ -101,4 +107,16 @@
   font-weight: 500;
   font-size: 16px;
   color: var(--subtitle-color);
+}
+.modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background-color: #fff ;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  padding: 20px;
+  outline: none;
+  border-radius: 10px;
 }

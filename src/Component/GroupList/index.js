@@ -1,23 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import { BiSearch } from "react-icons/bi";
 import { SlOptionsVertical } from "react-icons/sl";
-import Button from "@mui/material/Button";
 import CustomButton from "../CustomButton";
+import GroupModal from "./Modal";
+import { getDatabase, push, ref, set } from "firebase/database";
+import { useSelector } from "react-redux";
 
 const GroupList = () => {
+  const [groupName, setGroupName] = useState("")
+  const [groupTag, setGroupTag] = useState("")
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const db = getDatabase();
+  const user = useSelector(user => user.logIn.logined)
+
+ const handleCreate = ()=>{
+  set(push(ref(db, 'groups' )), {
+    groupName,
+    groupTag,
+    admin: user.displayName,
+    adminId: user.uid 
+  }).then(()=>{
+    setOpen(false)
+  })
+ }
+    
+  
   return (
     <>
       <div className="groupList">
         <div className="groupListHeader">
           <h2>Group List</h2>
-          <div className="searchBox">
-            <div className="searchIcon">
-              <BiSearch />
+          <div className="groupListHeaderWrapper">
+            <div className="searchBox">
+              <div className="searchIcon">
+                <BiSearch />
+              </div>
+              <input type="text" placeholder="Search" />
+              <div className="searchOptionIcon">
+                <SlOptionsVertical />
+              </div>
             </div>
-            <input type="text" placeholder="Search" />
-            <div className="searchOptionIcon">
-              <SlOptionsVertical />
+            <div>
+              <GroupModal 
+              setGroupName={setGroupName} 
+              setGroupTag={setGroupTag} 
+              handleCreate={handleCreate}
+              setOpen={setOpen}
+              handleOpen={handleOpen}
+              open={open}/>
             </div>
           </div>
         </div>
@@ -38,6 +70,7 @@ const GroupList = () => {
           </div>
         </div>
       </div>
+      
     </>
   );
 };

@@ -100,6 +100,7 @@ const AllUser = () => {
         if(blockItem.val().blockId == user.uid){
           blockArr.push({
             block: blockItem.val().block,
+            blockId: blockItem.val().blockId,
             blockById: blockItem.val().blockById
           })
         }
@@ -108,9 +109,8 @@ const AllUser = () => {
     });
   }, [])
  
-userlist.map((item)=>{
-  item.id.includes("HpVnGev2WPcKKeqlCIksunIRy622")
-})
+  console.log(blocked);
+  console.log(userlist)
   return (
     <div className="allUser">
       <div className="allUserHeader">
@@ -178,14 +178,23 @@ userlist.map((item)=>{
                       </Button>
                     ) 
                     :
-                     (
+                    item.id == blocked.map(item => item.blockById) ? (
+                      <Button
+                        onClick={() => handleFrndReq(item)}
+                        variant="contained"
+                        disabled
+                      >
+                        Add friend
+                      </Button>
+                    ):(
                       <Button
                         onClick={() => handleFrndReq(item)}
                         variant="contained"
                       >
                         Add friend
                       </Button>
-                    )}
+                    )
+                     }
                   </div>
                 )}
               </div>
